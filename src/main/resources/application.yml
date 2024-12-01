@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: food111
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/food_shop?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+    password: dt123456789
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml  # ??Mapper XML???
+  type-aliases-package: org.example.food111.entry   # ?????????
+  configuration:
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  # ????SQL??????????
+file:
+  upload-dir: ./uploads/food_images

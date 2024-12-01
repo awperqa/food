@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="org.example.food111.mapper.FoodMapper">
+        <insert id="addFood">
+            insert into food (tno,pname,price,salePrice,unit,weight,pics,mark)
+            values (#{tno},#{pname},#{price},#{salePrice},#{unit},#{weight},#{pics},#{mark})
+        </insert>
+        <select id="getFoods" resultType = "org.example.food111.entry.Food">
+            select * from food
+            <where>
+                <if test="tno !=0">
+                    tno = #{tno}
+                </if>
+            </where>
+        </select>
+</mapper>
